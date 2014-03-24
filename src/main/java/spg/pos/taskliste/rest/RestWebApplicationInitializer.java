@@ -1,0 +1,25 @@
+package spg.pos.taskliste.rest;
+
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+/**
+ * Initializer for rest web app.
+ * 
+ * @author michi
+ */
+public class RestWebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+	@Override
+    protected Class<?>[] getRootConfigClasses() {
+        return new Class<?>[]{RestApplicationConfig.class};
+    }
+
+    @Override
+    protected Class<?>[] getServletConfigClasses() {
+        return new Class<?>[]{RestWebConfiguration.class};
+    }
+
+    @Override
+    protected String[] getServletMappings() {
+        return new String[]{"/*"};
+    }
+}
